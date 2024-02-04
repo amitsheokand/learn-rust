@@ -127,4 +127,36 @@ fn main() {
     //     index out of bounds: the len is 5 but the index is 7
     println!("The value of the element at index {} is: {}", index, element);
 
+
+    // quiz
+
+    // does not compile
+
+    // let message = "The temperature today is:";
+    // let x = [message, 100];
+    // println!("{} {}", x[0], x[1]);
+
+    // error[E0308]: mismatched types
+    //    --> src/main.rs:133:23
+    //     |
+    // 133 |     let x = [message, 100];
+    //     |                       ^^^ expected `&str`, found integer
+
+
+    let message = "The temperature today is:";
+    let x = [message; 100]; // replace , with ;,now initializes array with 100 elements of message
+    println!("{} {}", x[0], x[1]);
+
+    // compiles
+    let t = ([1; 2], [3; 4]);
+    println!("{:?}", t);
+    let (a, b) = t;
+    println!("{}", a[0]+ t.1[0]);
+
+    // result : ([1, 1], [3, 3, 3, 3])
+    // 4
+
+
+
+
 }
